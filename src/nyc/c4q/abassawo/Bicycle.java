@@ -1,10 +1,9 @@
 package nyc.c4q.abassawo;
 
-/**
- * Created by c4q-ac29 on 8/31/16.
- */
+
 public class Bicycle implements Vehicle, WheeliaAble {
     double speed;
+    int brakeDecelRate;
 
     public Bicycle(){
         this.speed = 0;
@@ -14,15 +13,21 @@ public class Bicycle implements Vehicle, WheeliaAble {
     @Override
     public void applyBrakes() {
 
+        speed -= brakeDecelRate;
+
     }
 
     @Override
     public void speedUp(int delta) {
 
+        speed += delta;
+
     }
 
     @Override
     public void slowDown(int delta) {
+
+        speed -= delta;
 
     }
 
